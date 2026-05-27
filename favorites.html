@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kid's Book Explorer - My Favorites</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
+  <div style="position:fixed;inset:0;background-image:url('images/book.jpg');background-size:cover;background-position:center;filter:blur(6px);transform:scale(1.05);z-index:-1;"></div>
+
+  <nav class="bg-white/90 backdrop-blur shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 ">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-book-open text-indigo-600 text-2xl"></i>
+          <span class="text-xl font-bold text-indigo-600 tracking-wide">Kid's Book Explorer</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="home.html" class="text-gray-600 hover:text-indigo-600 transition">Home</a>
+          <a href="explore.html" class="text-gray-600 hover:text-indigo-600 transition">Explore</a>
+          <a href="favorites.html" class="text-indigo-600 font-medium">Favorites</a>
+          <a href="library.html" class="text-gray-600 hover:text-indigo-600 transition">Library</a>
+        </div>
+        <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
+          <span class="block w-6 h-0.5 bg-gray-700"></span>
+          <span class="block w-6 h-0.5 bg-gray-700"></span>
+          <span class="block w-6 h-0.5 bg-gray-700"></span>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden flex-col pb-4 space-y-2">
+        <a href="home.html" class="block text-gray-600 hover:text-indigo-600 transition">Home</a>
+        <a href="explore.html" class="block text-gray-600 hover:text-indigo-600 transition">Explore</a>
+        <a href="favorites.html" class="block text-indigo-600 font-semibold">Favorites</a>
+        <a href="library.html" class="block text-gray-600 hover:text-indigo-600 transition">Library</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-r from-bg-gradient-to-r from-bg-gray-800 to-purple-700 text-white py-12 px-4 text-center">
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-4 tracking-tight leading-none mb-2">My Favorite Books</h1>
+    <p class="mt-4 text-base sm:text-lg text-indigo-900 max-w-xl mx-auto">Your curated personal library, saved safely in your browser.</p>
+  </header>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div id="empty-state" class="hidden text-center py-16">
+      <span class="text-6xl">⭐</span>
+      <h2 class="text-2xl font-bold text-gray-700 mt-4 mb-2">No favorites added yet</h2>
+      <p class="text-gray-500 mb-6">Head back to the homepage to explore and add books to your collection.</p>
+      <a href="home.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold shadow transition">Browse Books</a>
+    </div>
+
+    <div id="favorites-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      </div>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+      <p>&copy; 2026  Kid's Book Explorer . All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initFavoritesPage } from './js/favorites.js';
+    initFavoritesPage();
+  </script>
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

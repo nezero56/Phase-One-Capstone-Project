@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Kid's Book Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans flex flex-col min-h-screen">
+
+    <!-- Same blurred background as home -->
+    <div style="position:fixed;inset:0;background-image:url('images/book.jpg');background-size:cover;background-position:center;filter:blur(6px);transform:scale(1.05);z-index:-1;"></div>
+
+    <!-- Same nav as home -->
+    <nav class="bg-white/90 backdrop-blur shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-book-open text-indigo-600 text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-900 tracking-tight"> Kid's book <span class="text-indigo-600">Explorer</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="home.html" class="text-gray-600 hover:text-indigo-600 transition">Home</a>
+                    <a href="explore.html" class="text-gray-600 hover:text-indigo-600 transition">Explore</a>
+                    <a href="favorites.html" class="text-gray-600 hover:text-indigo-600 transition">Favorites</a>
+                    <a href="library.html" class="text-indigo-600 font-medium">Library</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+
+        <!-- Same hero section as home -->
+        <section class="bg-gradient-to-r from-bg-gray-800 to-purple-700 text-white py-16 px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <span class="bg-indigo-900/30 text-indigo-70 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+                    Kinyarwanda Stories...
+                </span>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-4 tracking-tight leading-none">
+                    Your Full Library Collection
+                </h1>
+                <p class="mt-4 text-base sm:text-lg text-indigo-900 max-w-xl mx-auto">
+                    Browse all books in the library, save your favorites, and track your reading journey completely online.
+                </p>
+                <div class="mt-8 max-w-md mx-auto relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                    </div>
+                    <input type="text" placeholder="Search by title, author, or genre..."
+                           class="w-full pl-10 pr-4 py-3 rounded-lg text-gray-500 placeholder-gray-500 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-md">
+                </div>
+            </div>
+        </section>
+
+        <!-- Same book grid as home -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 tracking-tight">All Books</h2>
+                <span class="text-sm font-medium text-gray-600 hover:underline cursor-pointer">View All</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-amber-100 to-orange-200 flex items-center justify-center relative">
+                        <img src="images/Injyangwe.jpg" alt="Injangwe za Sano" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-gray-700 text-xs px-2 py-1 rounded font-semibold">
+                            Fiction
+                        </span>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 line-clamp-1">Injangwe za Sano</h3>
+                            <p class="text-sm text-gray-500 mt-1">mmalecki</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-50 flex justify-between items-center text-sm text-gray-600">
+                            <span><i class="fa-solid fa-star text-amber-400 mr-1"></i> 4.3</span>
+                            <span class="text-indigo-600 font-medium hover:text-indigo-800 cursor-pointer">Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center relative">
+                        <img src="images/bakame.jpg" alt="Mpyisi na Bakame" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-gray-700 text-xs px-2 py-1 rounded font-semibold">
+                            Sci-Fi
+                        </span>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 line-clamp-1">Mpyisi na Bakame</h3>
+                            <p class="text-sm text-gray-500 mt-1">Sonia</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-50 flex justify-between items-center text-sm text-gray-600">
+                            <span><i class="fa-solid fa-star text-amber-400 mr-1"></i> 4.7</span>
+                            <span class="text-indigo-600 font-medium hover:text-indigo-800 cursor-pointer">Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-teal-100 to-emerald-200 flex items-center justify-center relative">
+                        <img src="images/maguru.jpg" alt="Maguru Atanga Amaguru" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-gray-700 text-xs px-2 py-1 rounded font-semibold">
+                            Self-Help
+                        </span>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 line-clamp-1">Maguru Atanga Amaguru</h3>
+                            <p class="text-sm text-gray-500 mt-1">Nelly son</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-50 flex justify-between items-center text-sm text-gray-600">
+                            <span><i class="fa-solid fa-star text-amber-400 mr-1"></i> 4.8</span>
+                            <span class="text-indigo-600 font-medium hover:text-indigo-800 cursor-pointer">Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-purple-100 to-pink-200 flex items-center justify-center relative">
+                        <img src="images/Nyiramaterefone.jpg" alt="Nyiramaterefone" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-gray-700 text-xs px-2 py-1 rounded font-semibold">
+                            Mystery
+                        </span>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 line-clamp-1">Nyiramaterefone</h3>
+                            <p class="text-sm text-gray-500 mt-1">Ton curry</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-50 flex justify-between items-center text-sm text-gray-600">
+                            <span><i class="fa-solid fa-star text-amber-400 mr-1"></i> 4.1</span>
+                            <span class="text-indigo-600 font-medium hover:text-indigo-800 cursor-pointer">Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-rose-100 to-red-200 flex items-center justify-center relative">
+                        <img src="images/Bobo na saduha.jpg" alt="Inzira y'Ubuzima" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-gray-700 text-xs px-2 py-1 rounded font-semibold">
+                            Drama
+                        </span>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 line-clamp-1">Inzira y'Ubuzima</h3>
+                            <p class="text-sm text-gray-500 mt-1">ecki</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-50 flex justify-between items-center text-sm text-gray-600">
+                            <span><i class="fa-solid fa-star text-amber-400 mr-1"></i> 4.5</span>
+                            <span class="text-indigo-600 font-medium hover:text-indigo-800 cursor-pointer">Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-yellow-100 to-lime-200 flex items-center justify-center relative">
+                        <img src="images/Cubiri.jpg" alt="Umubyeyi" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-gray-700 text-xs px-2 py-1 rounded font-semibold">
+                            Family
+                        </span>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 line-clamp-1">Umubyeyi w'Inzozi</h3>
+                            <p class="text-sm text-gray-500 mt-1">mmal</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-50 flex justify-between items-center text-sm text-gray-600">
+                            <span><i class="fa-solid fa-star text-amber-400 mr-1"></i> 4.6</span>
+                            <span class="text-indigo-600 font-medium hover:text-indigo-800 cursor-pointer">Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-cyan-100 to-sky-200 flex items-center justify-center relative">
+                        <img src="images/Habari.jpg" alt="Urukundo" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-gray-700 text-xs px-2 py-1 rounded font-semibold">
+                            Romance
+                        </span>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 line-clamp-1">Urukundo Ruhoraho</h3>
+                            <p class="text-sm text-gray-500 mt-1">Didi</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-50 flex justify-between items-center text-sm text-gray-600">
+                            <span><i class="fa-solid fa-star text-amber-400 mr-1"></i> 4.4</span>
+                            <span class="text-indigo-600 font-medium hover:text-indigo-800 cursor-pointer">Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-fuchsia-100 to-violet-200 flex items-center justify-center relative">
+                        <img src="images/mukiza.jpg" alt="Inkuru" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-gray-700 text-xs px-2 py-1 rounded font-semibold">
+                            History
+                        </span>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 line-clamp-1">Inkuru z'Amateka</h3>
+                            <p class="text-sm text-gray-500 mt-1">Abraham</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-50 flex justify-between items-center text-sm text-gray-600">
+                            <span><i class="fa-solid fa-star text-amber-400 mr-1"></i> 4.9</span>
+                            <span class="text-indigo-600 font-medium hover:text-indigo-800 cursor-pointer">Favorite</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Same footer as home -->
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-book-open text-indigo-400"></i>
+                <span class="text-white font-semibold">Kid's Book Explorer</span>
+            </div>
+            <p class="text-sm text-center sm:text-left">
+                &copy; 2026 Kid's Book Explorer. All rights reserved.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-lg"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter text-lg"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
