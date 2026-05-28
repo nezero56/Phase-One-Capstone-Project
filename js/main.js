@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const books = await searchBooks(query);
         renderBooks(books);
     }
+    
 
     // Render book array to DOM
     function renderBooks(books) {
