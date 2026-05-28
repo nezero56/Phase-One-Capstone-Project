@@ -85,6 +85,7 @@ function setupCardEventListeners() {
     });
 }
 
+
 /**
  * Loading state placeholder feedback framework injection (Exercise 3.4)
  */
@@ -96,6 +97,7 @@ function showLoadingSpinner(message) {
             <p class="text-gray-500">${message}</p>
         </div>`;
 }
+
 
 /**
  * App initialization setup routines
@@ -113,6 +115,7 @@ async function init() {
         }
     }
 
+    
     // Exercise 3.3: Capture Search Engine form submissions 
     if (searchForm) {
         searchForm.addEventListener('submit', async (e) => {
