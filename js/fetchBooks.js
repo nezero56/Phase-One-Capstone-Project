@@ -5,6 +5,7 @@ export async function fetchBooks(query) {
 
     const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=12`;
 
+    
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error("Network response was not ok");
@@ -21,6 +22,7 @@ export async function fetchBooks(query) {
             genre: book.subject ? book.subject[0] : "General",
             rating: (3.5 + Math.random() * 1.5).toFixed(1)
         }));
+        
     } catch (error) {
         console.error("Error fetching books:", error);
         return [];
