@@ -2,6 +2,7 @@
 // Exercise 2.2: JS module exporting add/remove favorites functions
 // Exercise 2.4: Persistence with localStorage
 
+
 const STORAGE_KEY = "book_explorer_favorites";
 
 // Exercise 2.4: Read from localStorage
@@ -40,6 +41,7 @@ export function initFavoritesPage() {
             if (emptyState) emptyState.classList.remove('hidden');
             return;
         }
+        
 
         if (emptyState) emptyState.classList.add('hidden');
 
