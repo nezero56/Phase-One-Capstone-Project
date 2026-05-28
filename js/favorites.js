@@ -11,6 +11,7 @@ export function getFavorites() {
     return favs ? JSON.parse(favs) : [];
 }
 
+
 export function isFavorite(bookId) {
     return getFavorites().some(book => book.id === bookId);
 }
