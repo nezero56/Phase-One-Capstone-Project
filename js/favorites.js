@@ -1,6 +1,6 @@
 // js/favorites.js
-// Exercise 2.2: JS module exporting add/remove favorites functions
-// Exercise 2.4: Persistence with localStorage
+// JS module exporting add/remove favorites functions
+//  Persistence with localStorage
 
 const STORAGE_KEY = "book_explorer_favorites";
 
@@ -14,7 +14,7 @@ export function isFavorite(bookId) {
     return getFavorites().some(book => book.id === bookId);
 }
 
-// Exercise 2.2: Toggle add/remove favorite
+//  Toggle add/remove favorite
 export function toggleFavorite(book) {
     let favs = getFavorites();
     if (isFavorite(book.id)) {
@@ -22,11 +22,11 @@ export function toggleFavorite(book) {
     } else {
         favs.push(book);
     }
-    // Exercise 2.4: Persist to localStorage
+    //  Persist to localStorage
     localStorage.setItem(STORAGE_KEY, JSON.stringify(favs));
 }
 
-// Exercise 2.1: Render favorites page with hardcoded + saved books
+//  Render favorites page with hardcoded + saved books
 export function initFavoritesPage() {
     const grid = document.getElementById('favorites-grid');
     const emptyState = document.getElementById('empty-state');
@@ -43,7 +43,7 @@ export function initFavoritesPage() {
 
         if (emptyState) emptyState.classList.add('hidden');
 
-        // Exercise 2.3: DOM events — click to remove
+        // DOM events — click to remove
         books.forEach(book => {
             const card = document.createElement('div');
             card.className = 'bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300 flex flex-col';
@@ -67,7 +67,7 @@ export function initFavoritesPage() {
                     </div>
                 </div>`;
 
-            // Exercise 2.3: DOM click event to remove from favorites
+            //  DOM click event to remove from favorites
             card.querySelector('.remove-btn').addEventListener('click', () => {
                 toggleFavorite(book);
                 render();

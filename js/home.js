@@ -10,9 +10,7 @@ const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const gridTitle = document.getElementById('grid-title');
 
-/**
- * Generates an HTML card layout string based on your original Tailwind components layout template.
- */
+
 function renderBookCard(book) {
     const favorited = isFavorite(book.id);
     
@@ -43,13 +41,9 @@ function renderBookCard(book) {
     `;
 }
 
-/**
- * Handles injecting HTML strings directly into the grid container viewport.
- */
 function displayBooks(books) {
     if (!bookGrid) return;
-
-    // Exercise 3.4: No Results Found Fallback feedback loop
+// No Results Found Fallback feedback loop
     if (books.length === 0) {
         bookGrid.innerHTML = `
             <div class="col-span-full text-center py-12">
@@ -64,9 +58,8 @@ function displayBooks(books) {
     setupCardEventListeners();
 }
 
-/**
- * Exercise 2.3: Attaches DOM events listening for favorite button clicks
- */
+
+ 
 function setupCardEventListeners() {
     const favButtons = document.querySelectorAll('.fav-btn');
     
@@ -85,9 +78,7 @@ function setupCardEventListeners() {
     });
 }
 
-/**
- * Loading state placeholder feedback framework injection (Exercise 3.4)
- */
+
 function showLoadingSpinner(message) {
     if (!bookGrid) return;
     bookGrid.innerHTML = `
@@ -97,14 +88,12 @@ function showLoadingSpinner(message) {
         </div>`;
 }
 
-/**
- * App initialization setup routines
- */
+
 async function init() {
     showLoadingSpinner("Fetching curated children's classics...");
 
     try {
-        // Initial load using a fallback query placeholder keyword setup
+      
         currentBooksCache = await fetchBooks("childrens classics");
         displayBooks(currentBooksCache);
     } catch (error) {
@@ -113,7 +102,6 @@ async function init() {
         }
     }
 
-    // Exercise 3.3: Capture Search Engine form submissions 
     if (searchForm) {
         searchForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -136,5 +124,4 @@ async function init() {
     }
 }
 
-// Fire application launch parameters when browser finishes parsing document layout
 document.addEventListener('DOMContentLoaded', init);
